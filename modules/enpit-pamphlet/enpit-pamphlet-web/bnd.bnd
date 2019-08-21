@@ -1,0 +1,4 @@
+Bundle-Name: enpit-pamphlet-web
+Bundle-SymbolicName: jp.co.enpit
+Bundle-Version: 1.0.0
+Export-Package: jp.co.enpit.constants
