@@ -21,27 +21,27 @@ import com.liferay.portal.kernel.model.PersistedModel;
 import com.liferay.portal.kernel.util.Accessor;
 
 /**
- * The extended model interface for the Foo service. Represents a row in the &quot;FOO_Foo&quot; database table, with each column mapped to a property of this class.
+ * The extended model interface for the Pamphlet service. Represents a row in the &quot;Pamphlet_Pamphlet&quot; database table, with each column mapped to a property of this class.
  *
  * @author Brian Wing Shun Chan
- * @see FooModel
+ * @see PamphletModel
  * @generated
  */
-@ImplementationClassName("jp.co.enpit.model.impl.FooImpl")
+@ImplementationClassName("jp.co.enpit.model.impl.PamphletImpl")
 @ProviderType
-public interface Foo extends FooModel, PersistedModel {
+public interface Pamphlet extends PamphletModel, PersistedModel {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this interface directly. Add methods to <code>jp.co.enpit.model.impl.FooImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify this interface directly. Add methods to <code>jp.co.enpit.model.impl.PamphletImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
-	public static final Accessor<Foo, Long> FOO_ID_ACCESSOR =
-		new Accessor<Foo, Long>() {
+	public static final Accessor<Pamphlet, Long> PAMPHLET_ID_ACCESSOR =
+		new Accessor<Pamphlet, Long>() {
 
 			@Override
-			public Long get(Foo foo) {
-				return foo.getFooId();
+			public Long get(Pamphlet pamphlet) {
+				return pamphlet.getPamphletId();
 			}
 
 			@Override
@@ -50,8 +50,8 @@ public interface Foo extends FooModel, PersistedModel {
 			}
 
 			@Override
-			public Class<Foo> getTypeClass() {
-				return Foo.class;
+			public Class<Pamphlet> getTypeClass() {
+				return Pamphlet.class;
 			}
 
 		};

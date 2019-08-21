@@ -26,33 +26,34 @@ import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Transactional;
 
 /**
- * Provides the remote service interface for Foo. Methods of this
+ * Provides the remote service interface for Pamphlet. Methods of this
  * service are expected to have security checks based on the propagated JAAS
  * credentials because this service can be accessed remotely.
  *
  * @author Brian Wing Shun Chan
- * @see FooServiceUtil
+ * @see PamphletServiceUtil
  * @generated
  */
 @AccessControlled
 @JSONWebService
 @OSGiBeanProperties(
 	property = {
-		"json.web.service.context.name=foo", "json.web.service.context.path=Foo"
+		"json.web.service.context.name=pamphlet",
+		"json.web.service.context.path=Pamphlet"
 	},
-	service = FooService.class
+	service = PamphletService.class
 )
 @ProviderType
 @Transactional(
 	isolation = Isolation.PORTAL,
 	rollbackFor = {PortalException.class, SystemException.class}
 )
-public interface FooService extends BaseService {
+public interface PamphletService extends BaseService {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this interface directly. Always use {@link FooServiceUtil} to access the foo remote service. Add custom service methods to <code>jp.co.enpit.service.impl.FooServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify or reference this interface directly. Always use {@link PamphletServiceUtil} to access the pamphlet remote service. Add custom service methods to <code>jp.co.enpit.service.impl.PamphletServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
 
 	/**

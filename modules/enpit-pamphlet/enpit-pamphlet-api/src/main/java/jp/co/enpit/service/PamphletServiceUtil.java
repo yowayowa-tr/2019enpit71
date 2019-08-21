@@ -21,24 +21,24 @@ import org.osgi.framework.FrameworkUtil;
 import org.osgi.util.tracker.ServiceTracker;
 
 /**
- * Provides the remote service utility for Foo. This utility wraps
- * <code>jp.co.enpit.service.impl.FooServiceImpl</code> and is an
+ * Provides the remote service utility for Pamphlet. This utility wraps
+ * <code>jp.co.enpit.service.impl.PamphletServiceImpl</code> and is an
  * access point for service operations in application layer code running on a
  * remote server. Methods of this service are expected to have security checks
  * based on the propagated JAAS credentials because this service can be
  * accessed remotely.
  *
  * @author Brian Wing Shun Chan
- * @see FooService
+ * @see PamphletService
  * @generated
  */
 @ProviderType
-public class FooServiceUtil {
+public class PamphletServiceUtil {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this class directly. Add custom service methods to <code>jp.co.enpit.service.impl.FooServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
+	 * Never modify this class directly. Add custom service methods to <code>jp.co.enpit.service.impl.PamphletServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
 
 	/**
@@ -50,18 +50,19 @@ public class FooServiceUtil {
 		return getService().getOSGiServiceIdentifier();
 	}
 
-	public static FooService getService() {
+	public static PamphletService getService() {
 		return _serviceTracker.getService();
 	}
 
-	private static ServiceTracker<FooService, FooService> _serviceTracker;
+	private static ServiceTracker<PamphletService, PamphletService>
+		_serviceTracker;
 
 	static {
-		Bundle bundle = FrameworkUtil.getBundle(FooService.class);
+		Bundle bundle = FrameworkUtil.getBundle(PamphletService.class);
 
-		ServiceTracker<FooService, FooService> serviceTracker =
-			new ServiceTracker<FooService, FooService>(
-				bundle.getBundleContext(), FooService.class, null);
+		ServiceTracker<PamphletService, PamphletService> serviceTracker =
+			new ServiceTracker<PamphletService, PamphletService>(
+				bundle.getBundleContext(), PamphletService.class, null);
 
 		serviceTracker.open();
 

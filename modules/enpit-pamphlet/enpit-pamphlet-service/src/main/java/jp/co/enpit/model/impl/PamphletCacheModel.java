@@ -27,16 +27,17 @@ import java.io.ObjectOutput;
 
 import java.util.Date;
 
-import jp.co.enpit.model.Foo;
+import jp.co.enpit.model.Pamphlet;
 
 /**
- * The cache model class for representing Foo in entity cache.
+ * The cache model class for representing Pamphlet in entity cache.
  *
  * @author Brian Wing Shun Chan
  * @generated
  */
 @ProviderType
-public class FooCacheModel implements CacheModel<Foo>, Externalizable {
+public class PamphletCacheModel
+	implements CacheModel<Pamphlet>, Externalizable {
 
 	@Override
 	public boolean equals(Object obj) {
@@ -44,13 +45,13 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 			return true;
 		}
 
-		if (!(obj instanceof FooCacheModel)) {
+		if (!(obj instanceof PamphletCacheModel)) {
 			return false;
 		}
 
-		FooCacheModel fooCacheModel = (FooCacheModel)obj;
+		PamphletCacheModel pamphletCacheModel = (PamphletCacheModel)obj;
 
-		if (fooId == fooCacheModel.fooId) {
+		if (pamphletId == pamphletCacheModel.pamphletId) {
 			return true;
 		}
 
@@ -59,17 +60,17 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 
 	@Override
 	public int hashCode() {
-		return HashUtil.hash(0, fooId);
+		return HashUtil.hash(0, pamphletId);
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
-		sb.append(", fooId=");
-		sb.append(fooId);
+		sb.append(", pamphletId=");
+		sb.append(pamphletId);
 		sb.append(", groupId=");
 		sb.append(groupId);
 		sb.append(", companyId=");
@@ -82,92 +83,67 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 		sb.append(createDate);
 		sb.append(", modifiedDate=");
 		sb.append(modifiedDate);
-		sb.append(", field1=");
-		sb.append(field1);
-		sb.append(", field2=");
-		sb.append(field2);
-		sb.append(", field3=");
-		sb.append(field3);
-		sb.append(", field4=");
-		sb.append(field4);
-		sb.append(", field5=");
-		sb.append(field5);
+		sb.append(", content=");
+		sb.append(content);
 		sb.append("}");
 
 		return sb.toString();
 	}
 
 	@Override
-	public Foo toEntityModel() {
-		FooImpl fooImpl = new FooImpl();
+	public Pamphlet toEntityModel() {
+		PamphletImpl pamphletImpl = new PamphletImpl();
 
 		if (uuid == null) {
-			fooImpl.setUuid("");
+			pamphletImpl.setUuid("");
 		}
 		else {
-			fooImpl.setUuid(uuid);
+			pamphletImpl.setUuid(uuid);
 		}
 
-		fooImpl.setFooId(fooId);
-		fooImpl.setGroupId(groupId);
-		fooImpl.setCompanyId(companyId);
-		fooImpl.setUserId(userId);
+		pamphletImpl.setPamphletId(pamphletId);
+		pamphletImpl.setGroupId(groupId);
+		pamphletImpl.setCompanyId(companyId);
+		pamphletImpl.setUserId(userId);
 
 		if (userName == null) {
-			fooImpl.setUserName("");
+			pamphletImpl.setUserName("");
 		}
 		else {
-			fooImpl.setUserName(userName);
+			pamphletImpl.setUserName(userName);
 		}
 
 		if (createDate == Long.MIN_VALUE) {
-			fooImpl.setCreateDate(null);
+			pamphletImpl.setCreateDate(null);
 		}
 		else {
-			fooImpl.setCreateDate(new Date(createDate));
+			pamphletImpl.setCreateDate(new Date(createDate));
 		}
 
 		if (modifiedDate == Long.MIN_VALUE) {
-			fooImpl.setModifiedDate(null);
+			pamphletImpl.setModifiedDate(null);
 		}
 		else {
-			fooImpl.setModifiedDate(new Date(modifiedDate));
+			pamphletImpl.setModifiedDate(new Date(modifiedDate));
 		}
 
-		if (field1 == null) {
-			fooImpl.setField1("");
+		if (content == null) {
+			pamphletImpl.setContent("");
 		}
 		else {
-			fooImpl.setField1(field1);
+			pamphletImpl.setContent(content);
 		}
 
-		fooImpl.setField2(field2);
-		fooImpl.setField3(field3);
+		pamphletImpl.resetOriginalValues();
 
-		if (field4 == Long.MIN_VALUE) {
-			fooImpl.setField4(null);
-		}
-		else {
-			fooImpl.setField4(new Date(field4));
-		}
-
-		if (field5 == null) {
-			fooImpl.setField5("");
-		}
-		else {
-			fooImpl.setField5(field5);
-		}
-
-		fooImpl.resetOriginalValues();
-
-		return fooImpl;
+		return pamphletImpl;
 	}
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
 		uuid = objectInput.readUTF();
 
-		fooId = objectInput.readLong();
+		pamphletId = objectInput.readLong();
 
 		groupId = objectInput.readLong();
 
@@ -177,13 +153,7 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 		userName = objectInput.readUTF();
 		createDate = objectInput.readLong();
 		modifiedDate = objectInput.readLong();
-		field1 = objectInput.readUTF();
-
-		field2 = objectInput.readBoolean();
-
-		field3 = objectInput.readInt();
-		field4 = objectInput.readLong();
-		field5 = objectInput.readUTF();
+		content = objectInput.readUTF();
 	}
 
 	@Override
@@ -195,7 +165,7 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 			objectOutput.writeUTF(uuid);
 		}
 
-		objectOutput.writeLong(fooId);
+		objectOutput.writeLong(pamphletId);
 
 		objectOutput.writeLong(groupId);
 
@@ -213,38 +183,22 @@ public class FooCacheModel implements CacheModel<Foo>, Externalizable {
 		objectOutput.writeLong(createDate);
 		objectOutput.writeLong(modifiedDate);
 
-		if (field1 == null) {
+		if (content == null) {
 			objectOutput.writeUTF("");
 		}
 		else {
-			objectOutput.writeUTF(field1);
-		}
-
-		objectOutput.writeBoolean(field2);
-
-		objectOutput.writeInt(field3);
-		objectOutput.writeLong(field4);
-
-		if (field5 == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(field5);
+			objectOutput.writeUTF(content);
 		}
 	}
 
 	public String uuid;
-	public long fooId;
+	public long pamphletId;
 	public long groupId;
 	public long companyId;
 	public long userId;
 	public String userName;
 	public long createDate;
 	public long modifiedDate;
-	public String field1;
-	public boolean field2;
-	public int field3;
-	public long field4;
-	public String field5;
+	public String content;
 
 }

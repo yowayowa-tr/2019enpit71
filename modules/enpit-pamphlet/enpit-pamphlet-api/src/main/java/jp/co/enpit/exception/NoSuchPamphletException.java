@@ -21,20 +21,20 @@ import com.liferay.portal.kernel.exception.NoSuchModelException;
  * @author Brian Wing Shun Chan
  */
 @ProviderType
-public class NoSuchFooException extends NoSuchModelException {
+public class NoSuchPamphletException extends NoSuchModelException {
 
-	public NoSuchFooException() {
+	public NoSuchPamphletException() {
 	}
 
-	public NoSuchFooException(String msg) {
+	public NoSuchPamphletException(String msg) {
 		super(msg);
 	}
 
-	public NoSuchFooException(String msg, Throwable cause) {
+	public NoSuchPamphletException(String msg, Throwable cause) {
 		super(msg, cause);
 	}
 
-	public NoSuchFooException(Throwable cause) {
+	public NoSuchPamphletException(Throwable cause) {
 		super(cause);
 	}
 

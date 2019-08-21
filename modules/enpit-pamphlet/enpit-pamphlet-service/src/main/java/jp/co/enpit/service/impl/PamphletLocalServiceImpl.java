@@ -14,26 +14,26 @@
 
 package jp.co.enpit.service.impl;
 
-import jp.co.enpit.service.base.FooLocalServiceBaseImpl;
+import jp.co.enpit.service.base.PamphletLocalServiceBaseImpl;
 
 /**
- * The implementation of the foo local service.
+ * The implementation of the pamphlet local service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>jp.co.enpit.service.FooLocalService</code> interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>jp.co.enpit.service.PamphletLocalService</code> interface.
  *
  * <p>
  * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
  * </p>
  *
  * @author Brian Wing Shun Chan
- * @see FooLocalServiceBaseImpl
+ * @see PamphletLocalServiceBaseImpl
  */
-public class FooLocalServiceImpl extends FooLocalServiceBaseImpl {
+public class PamphletLocalServiceImpl extends PamphletLocalServiceBaseImpl {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. Use <code>jp.co.enpit.service.FooLocalService</code> via injection or a <code>org.osgi.util.tracker.ServiceTracker</code> or use <code>jp.co.enpit.service.FooLocalServiceUtil</code>.
+	 * Never reference this class directly. Use <code>jp.co.enpit.service.PamphletLocalService</code> via injection or a <code>org.osgi.util.tracker.ServiceTracker</code> or use <code>jp.co.enpit.service.PamphletLocalServiceUtil</code>.
 	 */
 }

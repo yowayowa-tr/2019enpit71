@@ -17,23 +17,23 @@ package jp.co.enpit.model.impl;
 import aQute.bnd.annotation.ProviderType;
 
 /**
- * The extended model implementation for the Foo service. Represents a row in the &quot;FOO_Foo&quot; database table, with each column mapped to a property of this class.
+ * The extended model implementation for the Pamphlet service. Represents a row in the &quot;Pamphlet_Pamphlet&quot; database table, with each column mapped to a property of this class.
  *
  * <p>
- * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>jp.co.enpit.model.Foo<code> interface.
+ * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>jp.co.enpit.model.Pamphlet<code> interface.
  * </p>
  *
  * @author Brian Wing Shun Chan
  */
 @ProviderType
-public class FooImpl extends FooBaseImpl {
+public class PamphletImpl extends PamphletBaseImpl {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. All methods that expect a foo model instance should use the {@link jp.co.enpit.model.Foo} interface instead.
+	 * Never reference this class directly. All methods that expect a pamphlet model instance should use the {@link jp.co.enpit.model.Pamphlet} interface instead.
 	 */
-	public FooImpl() {
+	public PamphletImpl() {
 	}
 
 }

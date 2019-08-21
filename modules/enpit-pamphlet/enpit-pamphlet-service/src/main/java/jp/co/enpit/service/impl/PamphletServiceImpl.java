@@ -14,26 +14,26 @@
 
 package jp.co.enpit.service.impl;
 
-import jp.co.enpit.service.base.FooServiceBaseImpl;
+import jp.co.enpit.service.base.PamphletServiceBaseImpl;
 
 /**
- * The implementation of the foo remote service.
+ * The implementation of the pamphlet remote service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>jp.co.enpit.service.FooService</code> interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the <code>jp.co.enpit.service.PamphletService</code> interface.
  *
  * <p>
  * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
  * </p>
  *
  * @author Brian Wing Shun Chan
- * @see FooServiceBaseImpl
+ * @see PamphletServiceBaseImpl
  */
-public class FooServiceImpl extends FooServiceBaseImpl {
+public class PamphletServiceImpl extends PamphletServiceBaseImpl {
 
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. Always use <code>jp.co.enpit.service.FooServiceUtil</code> to access the foo remote service.
+	 * Never reference this class directly. Always use <code>jp.co.enpit.service.PamphletServiceUtil</code> to access the pamphlet remote service.
 	 */
 }
