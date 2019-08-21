@@ -1,0 +1,10 @@
+Bundle-Name: enpit-pamphlet-api
+Bundle-SymbolicName: jp.co.enpit.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	jp.co.enpit.exception,\
+	jp.co.enpit.model,\
+	jp.co.enpit.service,\
+	jp.co.enpit.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../enpit-pamphlet-service/service.xml
