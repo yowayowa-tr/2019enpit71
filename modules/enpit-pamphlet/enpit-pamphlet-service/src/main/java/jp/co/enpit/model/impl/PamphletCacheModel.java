@@ -65,7 +65,7 @@ public class PamphletCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(19);
+		StringBundler sb = new StringBundler(21);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -83,6 +83,8 @@ public class PamphletCacheModel
 		sb.append(createDate);
 		sb.append(", modifiedDate=");
 		sb.append(modifiedDate);
+		sb.append(", locationId=");
+		sb.append(locationId);
 		sb.append(", content=");
 		sb.append(content);
 		sb.append("}");
@@ -127,6 +129,8 @@ public class PamphletCacheModel
 			pamphletImpl.setModifiedDate(new Date(modifiedDate));
 		}
 
+		pamphletImpl.setLocationId(locationId);
+
 		if (content == null) {
 			pamphletImpl.setContent("");
 		}
@@ -153,6 +157,8 @@ public class PamphletCacheModel
 		userName = objectInput.readUTF();
 		createDate = objectInput.readLong();
 		modifiedDate = objectInput.readLong();
+
+		locationId = objectInput.readLong();
 		content = objectInput.readUTF();
 	}
 
@@ -183,6 +189,8 @@ public class PamphletCacheModel
 		objectOutput.writeLong(createDate);
 		objectOutput.writeLong(modifiedDate);
 
+		objectOutput.writeLong(locationId);
+
 		if (content == null) {
 			objectOutput.writeUTF("");
 		}
@@ -199,6 +207,7 @@ public class PamphletCacheModel
 	public String userName;
 	public long createDate;
 	public long modifiedDate;
+	public long locationId;
 	public String content;
 
 }

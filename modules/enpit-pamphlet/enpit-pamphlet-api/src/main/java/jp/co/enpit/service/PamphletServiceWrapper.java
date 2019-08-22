@@ -33,6 +33,15 @@ public class PamphletServiceWrapper
 		_pamphletService = pamphletService;
 	}
 
+	@Override
+	public jp.co.enpit.model.Pamphlet addEntry(
+			long locationId, String content,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return _pamphletService.addEntry(locationId, content, serviceContext);
+	}
+
 	/**
 	 * Returns the OSGi service identifier.
 	 *
@@ -41,6 +50,13 @@ public class PamphletServiceWrapper
 	@Override
 	public String getOSGiServiceIdentifier() {
 		return _pamphletService.getOSGiServiceIdentifier();
+	}
+
+	@Override
+	public java.util.List<jp.co.enpit.model.Pamphlet> getPamphlets(
+		long locationId, int start, int end) {
+
+		return _pamphletService.getPamphlets(locationId, start, end);
 	}
 
 	@Override

@@ -23,6 +23,7 @@
 
 		<!-- Other fields -->
 
+		<column name="locationId" type="long" />
 		<column name="content" type="String" />
 
 		<!-- Order -->
@@ -32,8 +33,21 @@
 		</order>
 
 		<!-- Finder methods -->
+		
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="LI" return-type="Collection">
+			<finder-column name="locationId" />
+		</finder>
+		<finder name="LI_G" return-type="Collection">
+			<finder-column name="locationId" />
+			<finder-column name="groupId" />
+		</finder>
 
 		<!-- References -->
+		
+		<reference entity="User" package-path="com.liferay.portal" />
 
 		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
 		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />

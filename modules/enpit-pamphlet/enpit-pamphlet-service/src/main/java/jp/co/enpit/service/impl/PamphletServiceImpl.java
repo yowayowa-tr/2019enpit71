@@ -14,6 +14,12 @@
 
 package jp.co.enpit.service.impl;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.service.ServiceContext;
+
+import java.util.List;
+
+import jp.co.enpit.model.Pamphlet;
 import jp.co.enpit.service.base.PamphletServiceBaseImpl;
 
 /**
@@ -31,9 +37,12 @@ import jp.co.enpit.service.base.PamphletServiceBaseImpl;
  */
 public class PamphletServiceImpl extends PamphletServiceBaseImpl {
 
-	/*
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this class directly. Always use <code>jp.co.enpit.service.PamphletServiceUtil</code> to access the pamphlet remote service.
-	 */
+	public List<Pamphlet> getPamphlets(long locationId, int start, int end) {
+		
+		return pamphletPersistence.findByLI(locationId, start, end);
+	}
+	
+	public Pamphlet addEntry(long locationId, String content, ServiceContext serviceContext) throws PortalException{
+		return pamphletLocalService.addEntry(locationId, content, serviceContext);
+	}
 }

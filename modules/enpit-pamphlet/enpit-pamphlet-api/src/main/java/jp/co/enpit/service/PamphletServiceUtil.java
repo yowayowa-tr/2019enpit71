@@ -40,6 +40,13 @@ public class PamphletServiceUtil {
 	 *
 	 * Never modify this class directly. Add custom service methods to <code>jp.co.enpit.service.impl.PamphletServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
+	public static jp.co.enpit.model.Pamphlet addEntry(
+			long locationId, String content,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		return getService().addEntry(locationId, content, serviceContext);
+	}
 
 	/**
 	 * Returns the OSGi service identifier.
@@ -48,6 +55,12 @@ public class PamphletServiceUtil {
 	 */
 	public static String getOSGiServiceIdentifier() {
 		return getService().getOSGiServiceIdentifier();
+	}
+
+	public static java.util.List<jp.co.enpit.model.Pamphlet> getPamphlets(
+		long locationId, int start, int end) {
+
+		return getService().getPamphlets(locationId, start, end);
 	}
 
 	public static PamphletService getService() {

@@ -42,6 +42,7 @@ public class PamphletSoap implements Serializable {
 		soapModel.setUserName(model.getUserName());
 		soapModel.setCreateDate(model.getCreateDate());
 		soapModel.setModifiedDate(model.getModifiedDate());
+		soapModel.setLocationId(model.getLocationId());
 		soapModel.setContent(model.getContent());
 
 		return soapModel;
@@ -160,6 +161,14 @@ public class PamphletSoap implements Serializable {
 		_modifiedDate = modifiedDate;
 	}
 
+	public long getLocationId() {
+		return _locationId;
+	}
+
+	public void setLocationId(long locationId) {
+		_locationId = locationId;
+	}
+
 	public String getContent() {
 		return _content;
 	}
@@ -176,6 +185,7 @@ public class PamphletSoap implements Serializable {
 	private String _userName;
 	private Date _createDate;
 	private Date _modifiedDate;
+	private long _locationId;
 	private String _content;
 
 }

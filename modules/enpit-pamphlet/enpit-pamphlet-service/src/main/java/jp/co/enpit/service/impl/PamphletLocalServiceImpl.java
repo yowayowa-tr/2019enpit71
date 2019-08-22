@@ -14,7 +14,11 @@
 
 package jp.co.enpit.service.impl;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.service.ServiceContext;
+
+import java.util.Date;
 
 import jp.co.enpit.model.Pamphlet;
 import jp.co.enpit.service.base.PamphletLocalServiceBaseImpl;
@@ -34,15 +38,21 @@ import jp.co.enpit.service.base.PamphletLocalServiceBaseImpl;
  */
 public class PamphletLocalServiceImpl extends PamphletLocalServiceBaseImpl {
 
-	public Pamphlet addEntry(String content, ServiceContext serviceContext) {
+	public Pamphlet addEntry(long locationId, String content, ServiceContext serviceContext) throws PortalException {
 		long pamphletId = counterLocalService.increment();
 		
 		Pamphlet entry = pamphletPersistence.create(pamphletId);
+		User user = userLocalService.getUser(serviceContext.getUserId());
+		Date now = new Date();
 		
+		entry.setUserId(user.getUserId());
+		entry.setUserName(user.getFullName());
+		entry.setModifiedDate(now);
+		entry.setCreateDate(now);
+		entry.setLocationId(locationId);
 		entry.setContent(content);
 		entry.setUuid(serviceContext.getUuid());
-		entry.setExpandoBridgeAttributes(serviceContext);
 		
-		return addPamphlet(entry);
+		return pamphletPersistence.update(entry);
 	}
 }

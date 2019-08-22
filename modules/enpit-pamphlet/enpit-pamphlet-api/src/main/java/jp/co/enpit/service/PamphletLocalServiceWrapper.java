@@ -37,10 +37,12 @@ public class PamphletLocalServiceWrapper
 
 	@Override
 	public jp.co.enpit.model.Pamphlet addEntry(
-		String content,
-		com.liferay.portal.kernel.service.ServiceContext serviceContext) {
+			long locationId, String content,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException {
 
-		return _pamphletLocalService.addEntry(content, serviceContext);
+		return _pamphletLocalService.addEntry(
+			locationId, content, serviceContext);
 	}
 
 	/**

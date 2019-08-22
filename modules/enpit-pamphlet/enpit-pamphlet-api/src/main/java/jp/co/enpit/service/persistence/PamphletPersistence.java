@@ -396,6 +396,446 @@ public interface PamphletPersistence extends BasePersistence<Pamphlet> {
 	public int countByUuid_C(String uuid, long companyId);
 
 	/**
+	 * Returns all the pamphlets where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByGroupId(long groupId);
+
+	/**
+	 * Returns a range of all the pamphlets where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @return the range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByGroupId(
+		long groupId, int start, int end);
+
+	/**
+	 * Returns an ordered range of all the pamphlets where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByGroupId(
+		long groupId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns an ordered range of all the pamphlets where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param retrieveFromCache whether to retrieve from the finder cache
+	 * @return the ordered range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByGroupId(
+		long groupId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator,
+		boolean retrieveFromCache);
+
+	/**
+	 * Returns the first pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public Pamphlet findByGroupId_First(
+			long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Returns the first pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public Pamphlet fetchByGroupId_First(
+		long groupId,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns the last pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public Pamphlet findByGroupId_Last(
+			long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Returns the last pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public Pamphlet fetchByGroupId_Last(
+		long groupId,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns the pamphlets before and after the current pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param pamphletId the primary key of the current pamphlet
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next pamphlet
+	 * @throws NoSuchPamphletException if a pamphlet with the primary key could not be found
+	 */
+	public Pamphlet[] findByGroupId_PrevAndNext(
+			long pamphletId, long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Removes all the pamphlets where groupId = &#63; from the database.
+	 *
+	 * @param groupId the group ID
+	 */
+	public void removeByGroupId(long groupId);
+
+	/**
+	 * Returns the number of pamphlets where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the number of matching pamphlets
+	 */
+	public int countByGroupId(long groupId);
+
+	/**
+	 * Returns all the pamphlets where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @return the matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI(long locationId);
+
+	/**
+	 * Returns a range of all the pamphlets where locationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @return the range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI(
+		long locationId, int start, int end);
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI(
+		long locationId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param retrieveFromCache whether to retrieve from the finder cache
+	 * @return the ordered range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI(
+		long locationId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator,
+		boolean retrieveFromCache);
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public Pamphlet findByLI_First(
+			long locationId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public Pamphlet fetchByLI_First(
+		long locationId,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public Pamphlet findByLI_Last(
+			long locationId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public Pamphlet fetchByLI_Last(
+		long locationId,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns the pamphlets before and after the current pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param pamphletId the primary key of the current pamphlet
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next pamphlet
+	 * @throws NoSuchPamphletException if a pamphlet with the primary key could not be found
+	 */
+	public Pamphlet[] findByLI_PrevAndNext(
+			long pamphletId, long locationId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Removes all the pamphlets where locationId = &#63; from the database.
+	 *
+	 * @param locationId the location ID
+	 */
+	public void removeByLI(long locationId);
+
+	/**
+	 * Returns the number of pamphlets where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @return the number of matching pamphlets
+	 */
+	public int countByLI(long locationId);
+
+	/**
+	 * Returns all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @return the matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI_G(long locationId, long groupId);
+
+	/**
+	 * Returns a range of all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @return the range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI_G(
+		long locationId, long groupId, int start, int end);
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI_G(
+		long locationId, long groupId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param retrieveFromCache whether to retrieve from the finder cache
+	 * @return the ordered range of matching pamphlets
+	 */
+	public java.util.List<Pamphlet> findByLI_G(
+		long locationId, long groupId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator,
+		boolean retrieveFromCache);
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public Pamphlet findByLI_G_First(
+			long locationId, long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public Pamphlet fetchByLI_G_First(
+		long locationId, long groupId,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public Pamphlet findByLI_G_Last(
+			long locationId, long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public Pamphlet fetchByLI_G_Last(
+		long locationId, long groupId,
+		com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+			orderByComparator);
+
+	/**
+	 * Returns the pamphlets before and after the current pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param pamphletId the primary key of the current pamphlet
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next pamphlet
+	 * @throws NoSuchPamphletException if a pamphlet with the primary key could not be found
+	 */
+	public Pamphlet[] findByLI_G_PrevAndNext(
+			long pamphletId, long locationId, long groupId,
+			com.liferay.portal.kernel.util.OrderByComparator<Pamphlet>
+				orderByComparator)
+		throws NoSuchPamphletException;
+
+	/**
+	 * Removes all the pamphlets where locationId = &#63; and groupId = &#63; from the database.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 */
+	public void removeByLI_G(long locationId, long groupId);
+
+	/**
+	 * Returns the number of pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @return the number of matching pamphlets
+	 */
+	public int countByLI_G(long locationId, long groupId);
+
+	/**
 	 * Caches the pamphlet in the entity cache if it is enabled.
 	 *
 	 * @param pamphlet the pamphlet

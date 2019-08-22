@@ -23,5 +23,6 @@ create table Pamphlet_Pamphlet (
 	userName VARCHAR(75) null,
 	createDate DATE null,
 	modifiedDate DATE null,
+	locationId LONG,
 	content VARCHAR(75) null
 );
