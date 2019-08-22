@@ -83,7 +83,7 @@ public class PamphletModelImpl
 		{"groupId", Types.BIGINT}, {"companyId", Types.BIGINT},
 		{"userId", Types.BIGINT}, {"userName", Types.VARCHAR},
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
-		{"content", Types.VARCHAR}
+		{"locationId", Types.BIGINT}, {"content", Types.VARCHAR}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -98,11 +98,12 @@ public class PamphletModelImpl
 		TABLE_COLUMNS_MAP.put("userName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("createDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("modifiedDate", Types.TIMESTAMP);
+		TABLE_COLUMNS_MAP.put("locationId", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("content", Types.VARCHAR);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table Pamphlet_Pamphlet (uuid_ VARCHAR(75) null,pamphletId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,content VARCHAR(75) null)";
+		"create table Pamphlet_Pamphlet (uuid_ VARCHAR(75) null,pamphletId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,locationId LONG,content VARCHAR(75) null)";
 
 	public static final String TABLE_SQL_DROP = "drop table Pamphlet_Pamphlet";
 
@@ -137,9 +138,11 @@ public class PamphletModelImpl
 
 	public static final long GROUPID_COLUMN_BITMASK = 2L;
 
-	public static final long UUID_COLUMN_BITMASK = 4L;
+	public static final long LOCATIONID_COLUMN_BITMASK = 4L;
 
-	public static final long MODIFIEDDATE_COLUMN_BITMASK = 8L;
+	public static final long UUID_COLUMN_BITMASK = 8L;
+
+	public static final long MODIFIEDDATE_COLUMN_BITMASK = 16L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -162,6 +165,7 @@ public class PamphletModelImpl
 		model.setUserName(soapModel.getUserName());
 		model.setCreateDate(soapModel.getCreateDate());
 		model.setModifiedDate(soapModel.getModifiedDate());
+		model.setLocationId(soapModel.getLocationId());
 		model.setContent(soapModel.getContent());
 
 		return model;
@@ -476,6 +480,26 @@ public class PamphletModelImpl
 
 			});
 		attributeGetterFunctions.put(
+			"locationId",
+			new Function<Pamphlet, Object>() {
+
+				@Override
+				public Object apply(Pamphlet pamphlet) {
+					return pamphlet.getLocationId();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"locationId",
+			new BiConsumer<Pamphlet, Object>() {
+
+				@Override
+				public void accept(Pamphlet pamphlet, Object locationId) {
+					pamphlet.setLocationId((Long)locationId);
+				}
+
+			});
+		attributeGetterFunctions.put(
 			"content",
 			new Function<Pamphlet, Object>() {
 
@@ -660,6 +684,29 @@ public class PamphletModelImpl
 
 	@JSON
 	@Override
+	public long getLocationId() {
+		return _locationId;
+	}
+
+	@Override
+	public void setLocationId(long locationId) {
+		_columnBitmask |= LOCATIONID_COLUMN_BITMASK;
+
+		if (!_setOriginalLocationId) {
+			_setOriginalLocationId = true;
+
+			_originalLocationId = _locationId;
+		}
+
+		_locationId = locationId;
+	}
+
+	public long getOriginalLocationId() {
+		return _originalLocationId;
+	}
+
+	@JSON
+	@Override
 	public String getContent() {
 		if (_content == null) {
 			return "";
@@ -719,6 +766,7 @@ public class PamphletModelImpl
 		pamphletImpl.setUserName(getUserName());
 		pamphletImpl.setCreateDate(getCreateDate());
 		pamphletImpl.setModifiedDate(getModifiedDate());
+		pamphletImpl.setLocationId(getLocationId());
 		pamphletImpl.setContent(getContent());
 
 		pamphletImpl.resetOriginalValues();
@@ -793,6 +841,10 @@ public class PamphletModelImpl
 
 		pamphletModelImpl._setModifiedDate = false;
 
+		pamphletModelImpl._originalLocationId = pamphletModelImpl._locationId;
+
+		pamphletModelImpl._setOriginalLocationId = false;
+
 		pamphletModelImpl._columnBitmask = 0;
 	}
 
@@ -841,6 +893,8 @@ public class PamphletModelImpl
 		else {
 			pamphletCacheModel.modifiedDate = Long.MIN_VALUE;
 		}
+
+		pamphletCacheModel.locationId = getLocationId();
 
 		pamphletCacheModel.content = getContent();
 
@@ -933,6 +987,9 @@ public class PamphletModelImpl
 	private Date _createDate;
 	private Date _modifiedDate;
 	private boolean _setModifiedDate;
+	private long _locationId;
+	private long _originalLocationId;
+	private boolean _setOriginalLocationId;
 	private String _content;
 	private long _columnBitmask;
 	private Pamphlet _escapedModel;

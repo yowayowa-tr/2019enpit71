@@ -16,9 +16,16 @@ package jp.co.enpit.service.http;
 
 import aQute.bnd.annotation.ProviderType;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import java.rmi.RemoteException;
+
+import jp.co.enpit.service.PamphletServiceUtil;
+
 /**
  * Provides the SOAP utility for the
- * <code>jp.co.enpit.service.PamphletServiceUtil</code> service
+ * <code>PamphletServiceUtil</code> service
  * utility. The static methods of this class call the same methods of the
  * service utility. However, the signatures are different because it is
  * difficult for SOAP to support certain types.
@@ -57,4 +64,43 @@ import aQute.bnd.annotation.ProviderType;
  */
 @ProviderType
 public class PamphletServiceSoap {
+
+	public static jp.co.enpit.model.PamphletSoap[] getPamphlets(
+			long locationId, int start, int end)
+		throws RemoteException {
+
+		try {
+			java.util.List<jp.co.enpit.model.Pamphlet> returnValue =
+				PamphletServiceUtil.getPamphlets(locationId, start, end);
+
+			return jp.co.enpit.model.PamphletSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static jp.co.enpit.model.PamphletSoap addEntry(
+			long locationId, String content,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws RemoteException {
+
+		try {
+			jp.co.enpit.model.Pamphlet returnValue =
+				PamphletServiceUtil.addEntry(
+					locationId, content, serviceContext);
+
+			return jp.co.enpit.model.PamphletSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(PamphletServiceSoap.class);
+
 }

@@ -21,9 +21,15 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.security.access.control.AccessControlled;
 import com.liferay.portal.kernel.service.BaseService;
+import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.spring.osgi.OSGiBeanProperties;
 import com.liferay.portal.kernel.transaction.Isolation;
+import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
+
+import java.util.List;
+
+import jp.co.enpit.model.Pamphlet;
 
 /**
  * Provides the remote service interface for Pamphlet. Methods of this
@@ -55,6 +61,9 @@ public interface PamphletService extends BaseService {
 	 *
 	 * Never modify or reference this interface directly. Always use {@link PamphletServiceUtil} to access the pamphlet remote service. Add custom service methods to <code>jp.co.enpit.service.impl.PamphletServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
+	public Pamphlet addEntry(
+			long locationId, String content, ServiceContext serviceContext)
+		throws PortalException;
 
 	/**
 	 * Returns the OSGi service identifier.
@@ -62,5 +71,8 @@ public interface PamphletService extends BaseService {
 	 * @return the OSGi service identifier
 	 */
 	public String getOSGiServiceIdentifier();
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<Pamphlet> getPamphlets(long locationId, int start, int end);
 
 }

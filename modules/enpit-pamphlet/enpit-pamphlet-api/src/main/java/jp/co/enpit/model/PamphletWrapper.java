@@ -66,6 +66,7 @@ public class PamphletWrapper implements Pamphlet, ModelWrapper<Pamphlet> {
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
+		attributes.put("locationId", getLocationId());
 		attributes.put("content", getContent());
 
 		return attributes;
@@ -119,6 +120,12 @@ public class PamphletWrapper implements Pamphlet, ModelWrapper<Pamphlet> {
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
+		}
+
+		Long locationId = (Long)attributes.get("locationId");
+
+		if (locationId != null) {
+			setLocationId(locationId);
 		}
 
 		String content = (String)attributes.get("content");
@@ -181,6 +188,16 @@ public class PamphletWrapper implements Pamphlet, ModelWrapper<Pamphlet> {
 	@Override
 	public long getGroupId() {
 		return _pamphlet.getGroupId();
+	}
+
+	/**
+	 * Returns the location ID of this pamphlet.
+	 *
+	 * @return the location ID of this pamphlet
+	 */
+	@Override
+	public long getLocationId() {
+		return _pamphlet.getLocationId();
 	}
 
 	/**
@@ -343,6 +360,16 @@ public class PamphletWrapper implements Pamphlet, ModelWrapper<Pamphlet> {
 	@Override
 	public void setGroupId(long groupId) {
 		_pamphlet.setGroupId(groupId);
+	}
+
+	/**
+	 * Sets the location ID of this pamphlet.
+	 *
+	 * @param locationId the location ID of this pamphlet
+	 */
+	@Override
+	public void setLocationId(long locationId) {
+		_pamphlet.setLocationId(locationId);
 	}
 
 	/**

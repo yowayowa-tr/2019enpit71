@@ -41,10 +41,11 @@ public class PamphletLocalServiceUtil {
 	 * Never modify this class directly. Add custom service methods to <code>jp.co.enpit.service.impl.PamphletLocalServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
 	public static jp.co.enpit.model.Pamphlet addEntry(
-		String content,
-		com.liferay.portal.kernel.service.ServiceContext serviceContext) {
+			long locationId, String content,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException {
 
-		return getService().addEntry(content, serviceContext);
+		return getService().addEntry(locationId, content, serviceContext);
 	}
 
 	/**

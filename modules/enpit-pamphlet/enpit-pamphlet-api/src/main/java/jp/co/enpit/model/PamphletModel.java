@@ -210,6 +210,20 @@ public interface PamphletModel
 	public void setModifiedDate(Date modifiedDate);
 
 	/**
+	 * Returns the location ID of this pamphlet.
+	 *
+	 * @return the location ID of this pamphlet
+	 */
+	public long getLocationId();
+
+	/**
+	 * Sets the location ID of this pamphlet.
+	 *
+	 * @param locationId the location ID of this pamphlet
+	 */
+	public void setLocationId(long locationId);
+
+	/**
 	 * Returns the content of this pamphlet.
 	 *
 	 * @return the content of this pamphlet

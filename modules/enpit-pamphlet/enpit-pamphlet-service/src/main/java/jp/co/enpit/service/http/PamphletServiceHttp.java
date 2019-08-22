@@ -16,13 +16,22 @@ package jp.co.enpit.service.http;
 
 import aQute.bnd.annotation.ProviderType;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.security.auth.HttpPrincipal;
+import com.liferay.portal.kernel.service.http.TunnelUtil;
+import com.liferay.portal.kernel.util.MethodHandler;
+import com.liferay.portal.kernel.util.MethodKey;
+
+import jp.co.enpit.service.PamphletServiceUtil;
+
 /**
  * Provides the HTTP utility for the
- * <code>jp.co.enpit.service.PamphletServiceUtil</code> service
+ * <code>PamphletServiceUtil</code> service
  * utility. The
  * static methods of this class calls the same methods of the service utility.
  * However, the signatures are different because it requires an additional
- * <code>com.liferay.portal.kernel.security.auth.HttpPrincipal</code> parameter.
+ * <code>HttpPrincipal</code> parameter.
  *
  * <p>
  * The benefits of using the HTTP utility is that it is fast and allows for
@@ -45,4 +54,84 @@ import aQute.bnd.annotation.ProviderType;
  */
 @ProviderType
 public class PamphletServiceHttp {
+
+	public static java.util.List<jp.co.enpit.model.Pamphlet> getPamphlets(
+		HttpPrincipal httpPrincipal, long locationId, int start, int end) {
+
+		try {
+			MethodKey methodKey = new MethodKey(
+				PamphletServiceUtil.class, "getPamphlets",
+				_getPamphletsParameterTypes0);
+
+			MethodHandler methodHandler = new MethodHandler(
+				methodKey, locationId, start, end);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception e) {
+				throw new com.liferay.portal.kernel.exception.SystemException(
+					e);
+			}
+
+			return (java.util.List<jp.co.enpit.model.Pamphlet>)returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException se) {
+			_log.error(se, se);
+
+			throw se;
+		}
+	}
+
+	public static jp.co.enpit.model.Pamphlet addEntry(
+			HttpPrincipal httpPrincipal, long locationId, String content,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException {
+
+		try {
+			MethodKey methodKey = new MethodKey(
+				PamphletServiceUtil.class, "addEntry",
+				_addEntryParameterTypes1);
+
+			MethodHandler methodHandler = new MethodHandler(
+				methodKey, locationId, content, serviceContext);
+
+			Object returnObj = null;
+
+			try {
+				returnObj = TunnelUtil.invoke(httpPrincipal, methodHandler);
+			}
+			catch (Exception e) {
+				if (e instanceof
+						com.liferay.portal.kernel.exception.PortalException) {
+
+					throw (com.liferay.portal.kernel.exception.PortalException)
+						e;
+				}
+
+				throw new com.liferay.portal.kernel.exception.SystemException(
+					e);
+			}
+
+			return (jp.co.enpit.model.Pamphlet)returnObj;
+		}
+		catch (com.liferay.portal.kernel.exception.SystemException se) {
+			_log.error(se, se);
+
+			throw se;
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(PamphletServiceHttp.class);
+
+	private static final Class<?>[] _getPamphletsParameterTypes0 = new Class[] {
+		long.class, int.class, int.class
+	};
+	private static final Class<?>[] _addEntryParameterTypes1 = new Class[] {
+		long.class, String.class,
+		com.liferay.portal.kernel.service.ServiceContext.class
+	};
+
 }

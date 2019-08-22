@@ -537,6 +537,520 @@ public class PamphletUtil {
 	}
 
 	/**
+	 * Returns all the pamphlets where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the matching pamphlets
+	 */
+	public static List<Pamphlet> findByGroupId(long groupId) {
+		return getPersistence().findByGroupId(groupId);
+	}
+
+	/**
+	 * Returns a range of all the pamphlets where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @return the range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByGroupId(
+		long groupId, int start, int end) {
+
+		return getPersistence().findByGroupId(groupId, start, end);
+	}
+
+	/**
+	 * Returns an ordered range of all the pamphlets where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByGroupId(
+		long groupId, int start, int end,
+		OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().findByGroupId(
+			groupId, start, end, orderByComparator);
+	}
+
+	/**
+	 * Returns an ordered range of all the pamphlets where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param retrieveFromCache whether to retrieve from the finder cache
+	 * @return the ordered range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByGroupId(
+		long groupId, int start, int end,
+		OrderByComparator<Pamphlet> orderByComparator,
+		boolean retrieveFromCache) {
+
+		return getPersistence().findByGroupId(
+			groupId, start, end, orderByComparator, retrieveFromCache);
+	}
+
+	/**
+	 * Returns the first pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public static Pamphlet findByGroupId_First(
+			long groupId, OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByGroupId_First(groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the first pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public static Pamphlet fetchByGroupId_First(
+		long groupId, OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().fetchByGroupId_First(
+			groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public static Pamphlet findByGroupId_Last(
+			long groupId, OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByGroupId_Last(groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public static Pamphlet fetchByGroupId_Last(
+		long groupId, OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().fetchByGroupId_Last(groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the pamphlets before and after the current pamphlet in the ordered set where groupId = &#63;.
+	 *
+	 * @param pamphletId the primary key of the current pamphlet
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next pamphlet
+	 * @throws NoSuchPamphletException if a pamphlet with the primary key could not be found
+	 */
+	public static Pamphlet[] findByGroupId_PrevAndNext(
+			long pamphletId, long groupId,
+			OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByGroupId_PrevAndNext(
+			pamphletId, groupId, orderByComparator);
+	}
+
+	/**
+	 * Removes all the pamphlets where groupId = &#63; from the database.
+	 *
+	 * @param groupId the group ID
+	 */
+	public static void removeByGroupId(long groupId) {
+		getPersistence().removeByGroupId(groupId);
+	}
+
+	/**
+	 * Returns the number of pamphlets where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the number of matching pamphlets
+	 */
+	public static int countByGroupId(long groupId) {
+		return getPersistence().countByGroupId(groupId);
+	}
+
+	/**
+	 * Returns all the pamphlets where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @return the matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI(long locationId) {
+		return getPersistence().findByLI(locationId);
+	}
+
+	/**
+	 * Returns a range of all the pamphlets where locationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @return the range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI(long locationId, int start, int end) {
+		return getPersistence().findByLI(locationId, start, end);
+	}
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI(
+		long locationId, int start, int end,
+		OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().findByLI(
+			locationId, start, end, orderByComparator);
+	}
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param retrieveFromCache whether to retrieve from the finder cache
+	 * @return the ordered range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI(
+		long locationId, int start, int end,
+		OrderByComparator<Pamphlet> orderByComparator,
+		boolean retrieveFromCache) {
+
+		return getPersistence().findByLI(
+			locationId, start, end, orderByComparator, retrieveFromCache);
+	}
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public static Pamphlet findByLI_First(
+			long locationId, OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByLI_First(locationId, orderByComparator);
+	}
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public static Pamphlet fetchByLI_First(
+		long locationId, OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().fetchByLI_First(locationId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public static Pamphlet findByLI_Last(
+			long locationId, OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByLI_Last(locationId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public static Pamphlet fetchByLI_Last(
+		long locationId, OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().fetchByLI_Last(locationId, orderByComparator);
+	}
+
+	/**
+	 * Returns the pamphlets before and after the current pamphlet in the ordered set where locationId = &#63;.
+	 *
+	 * @param pamphletId the primary key of the current pamphlet
+	 * @param locationId the location ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next pamphlet
+	 * @throws NoSuchPamphletException if a pamphlet with the primary key could not be found
+	 */
+	public static Pamphlet[] findByLI_PrevAndNext(
+			long pamphletId, long locationId,
+			OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByLI_PrevAndNext(
+			pamphletId, locationId, orderByComparator);
+	}
+
+	/**
+	 * Removes all the pamphlets where locationId = &#63; from the database.
+	 *
+	 * @param locationId the location ID
+	 */
+	public static void removeByLI(long locationId) {
+		getPersistence().removeByLI(locationId);
+	}
+
+	/**
+	 * Returns the number of pamphlets where locationId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @return the number of matching pamphlets
+	 */
+	public static int countByLI(long locationId) {
+		return getPersistence().countByLI(locationId);
+	}
+
+	/**
+	 * Returns all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @return the matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI_G(long locationId, long groupId) {
+		return getPersistence().findByLI_G(locationId, groupId);
+	}
+
+	/**
+	 * Returns a range of all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @return the range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI_G(
+		long locationId, long groupId, int start, int end) {
+
+		return getPersistence().findByLI_G(locationId, groupId, start, end);
+	}
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI_G(
+		long locationId, long groupId, int start, int end,
+		OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().findByLI_G(
+			locationId, groupId, start, end, orderByComparator);
+	}
+
+	/**
+	 * Returns an ordered range of all the pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not <code>QueryUtil#ALL_POS</code>), then the query will include the default ORDER BY logic from <code>PamphletModelImpl</code>. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of pamphlets
+	 * @param end the upper bound of the range of pamphlets (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param retrieveFromCache whether to retrieve from the finder cache
+	 * @return the ordered range of matching pamphlets
+	 */
+	public static List<Pamphlet> findByLI_G(
+		long locationId, long groupId, int start, int end,
+		OrderByComparator<Pamphlet> orderByComparator,
+		boolean retrieveFromCache) {
+
+		return getPersistence().findByLI_G(
+			locationId, groupId, start, end, orderByComparator,
+			retrieveFromCache);
+	}
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public static Pamphlet findByLI_G_First(
+			long locationId, long groupId,
+			OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByLI_G_First(
+			locationId, groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the first pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public static Pamphlet fetchByLI_G_First(
+		long locationId, long groupId,
+		OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().fetchByLI_G_First(
+			locationId, groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet
+	 * @throws NoSuchPamphletException if a matching pamphlet could not be found
+	 */
+	public static Pamphlet findByLI_G_Last(
+			long locationId, long groupId,
+			OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByLI_G_Last(
+			locationId, groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the last pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching pamphlet, or <code>null</code> if a matching pamphlet could not be found
+	 */
+	public static Pamphlet fetchByLI_G_Last(
+		long locationId, long groupId,
+		OrderByComparator<Pamphlet> orderByComparator) {
+
+		return getPersistence().fetchByLI_G_Last(
+			locationId, groupId, orderByComparator);
+	}
+
+	/**
+	 * Returns the pamphlets before and after the current pamphlet in the ordered set where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param pamphletId the primary key of the current pamphlet
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next pamphlet
+	 * @throws NoSuchPamphletException if a pamphlet with the primary key could not be found
+	 */
+	public static Pamphlet[] findByLI_G_PrevAndNext(
+			long pamphletId, long locationId, long groupId,
+			OrderByComparator<Pamphlet> orderByComparator)
+		throws jp.co.enpit.exception.NoSuchPamphletException {
+
+		return getPersistence().findByLI_G_PrevAndNext(
+			pamphletId, locationId, groupId, orderByComparator);
+	}
+
+	/**
+	 * Removes all the pamphlets where locationId = &#63; and groupId = &#63; from the database.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 */
+	public static void removeByLI_G(long locationId, long groupId) {
+		getPersistence().removeByLI_G(locationId, groupId);
+	}
+
+	/**
+	 * Returns the number of pamphlets where locationId = &#63; and groupId = &#63;.
+	 *
+	 * @param locationId the location ID
+	 * @param groupId the group ID
+	 * @return the number of matching pamphlets
+	 */
+	public static int countByLI_G(long locationId, long groupId) {
+		return getPersistence().countByLI_G(locationId, groupId);
+	}
+
+	/**
 	 * Caches the pamphlet in the entity cache if it is enabled.
 	 *
 	 * @param pamphlet the pamphlet

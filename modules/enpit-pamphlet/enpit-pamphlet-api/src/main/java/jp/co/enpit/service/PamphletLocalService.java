@@ -64,7 +64,9 @@ public interface PamphletLocalService
 	 *
 	 * Never modify or reference this interface directly. Always use {@link PamphletLocalServiceUtil} to access the pamphlet local service. Add custom service methods to <code>jp.co.enpit.service.impl.PamphletLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
-	public Pamphlet addEntry(String content, ServiceContext serviceContext);
+	public Pamphlet addEntry(
+			long locationId, String content, ServiceContext serviceContext)
+		throws PortalException;
 
 	/**
 	 * Adds the pamphlet to the database. Also notifies the appropriate model listeners.
