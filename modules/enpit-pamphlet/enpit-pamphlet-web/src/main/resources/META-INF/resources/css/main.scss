@@ -79,3 +79,43 @@ img.forest{
 	}
 	
 	
+}
+
+img.map{
+	width: calc(100% - 30px);
+	position:relative;
+    margin:0 auto; 
+    text-align: center;
+}
+
+img.baba{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+    top: 56%;
+    left: 53%;
+}
+
+img.hikiUma{
+	width: 45px;
+	height: 45px;
+	position: absolute;
+    top: 57%;
+    left: 39%;
+}
+
+img.car{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+    top: 40%;
+    left: 33%;
+}
+
+img.forest{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+    top: 70%;
+    left: 30%;
+}
