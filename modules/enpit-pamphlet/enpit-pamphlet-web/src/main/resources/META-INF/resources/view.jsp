@@ -91,3 +91,56 @@
 		});
 	</aui:script>
 </p>
+
+<p>
+	<b><liferay-ui:message key="enpitpamphletweb.caption"/></b>
+</p>
+
+<div class="container">
+<div class="scroll">
+	<div class="ux-contents">
+		<div class="share">
+			<p class="name">mi</p>
+			<p class="comment">SampleText</p>
+			<p class="timestamp">2019/08/21 hh/mm/ss</p>
+		</div>
+		<div class="share">
+			<p class="name">mi</p>
+			<p class="comment">SampleText</p>
+			<p class="timestamp">2019/08/21 hh/mm/ss</p>
+		</div>
+		<div class="share">
+			<p class="name">mi</p>
+			<p class="comment">SampleTextSampleTextSampleTextSample</p>
+			<p class="timestamp">2019/08/21 hh/mm/ss</p>
+		</div>
+		<div class="share">
+			<p class="name">mi</p>
+			<p class="comment">SampleText</p>
+			<p class="timestamp">2019/08/21 hh/mm/ss</p>
+		</div>
+		<div class="share">
+			<p class="name">mi</p>
+			<p class="comment">SampleText</p>
+			<p class="timestamp">2019/08/21 hh/mm/ss</p>
+		</div>
+		<div class="share">
+			<p class="name">mi</p>
+			<p class="comment">SampleText</p>
+			<p class="timestamp">2019/08/21 hh/mm/ss</p>
+		</div>
+	</div>
+</div>
+
+	
+	
+	<div class="form-group">
+	<input class="form-control" id="basicInputTypeText" placeholder="Please Enter a Content" type="text"/>
+	<button class="btn send-button" type="button">Send</button>
+	</div>
+
+</div>
+
+<script>
+
+</script>
