@@ -7,7 +7,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
-	<bean class="jp.co.enpit.service.impl.FooLocalServiceImpl" id="jp.co.enpit.service.FooLocalService" />
-	<bean class="jp.co.enpit.service.impl.FooServiceImpl" id="jp.co.enpit.service.FooService" />
-	<bean class="jp.co.enpit.service.persistence.impl.FooPersistenceImpl" id="jp.co.enpit.service.persistence.FooPersistence" parent="basePersistence" />
+	<bean class="jp.co.enpit.service.impl.PamphletLocalServiceImpl" id="jp.co.enpit.service.PamphletLocalService" />
+	<bean class="jp.co.enpit.service.impl.PamphletServiceImpl" id="jp.co.enpit.service.PamphletService" />
+	<bean class="jp.co.enpit.service.persistence.impl.PamphletPersistenceImpl" id="jp.co.enpit.service.persistence.PamphletPersistence" parent="basePersistence" />
 </beans>
