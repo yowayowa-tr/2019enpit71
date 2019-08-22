@@ -1,12 +1,21 @@
 package jp.co.enpit.portlet;
 
-import jp.co.enpit.constants.EnpitPamphletWebPortletKeys;
-
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.service.ServiceContext;
+import com.liferay.portal.kernel.service.ServiceContextFactory;
+import com.liferay.portal.kernel.util.ParamUtil;
 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 import javax.portlet.Portlet;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import jp.co.enpit.constants.EnpitPamphletWebPortletKeys;
+import jp.co.enpit.model.Pamphlet;
+import jp.co.enpit.service.PamphletLocalService;
 
 /**
  * @author yasuflatland
@@ -27,4 +36,18 @@ import org.osgi.service.component.annotations.Component;
 	service = Portlet.class
 )
 public class EnpitPamphletWebPortlet extends MVCPortlet {
+	public void show(ActionRequest request, ActionResponse response) throws PortalException {
+		System.out.println("get actionTest");
+
+	    ServiceContext serviceContext = ServiceContextFactory.getInstance(Pamphlet.class.getName(), request);
+
+	    String content = ParamUtil.getString(request, "content");
+	    System.out.println(content);
+
+	    _pamphletLocalService.addEntry(content, serviceContext);
+	}
+	
+	@Reference
+	private PamphletLocalService _pamphletLocalService;
+	
 }
